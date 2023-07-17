@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class People {
 	
+	private int id;
 	private String name;
 	private int age;
 	private String gender;
@@ -18,8 +19,9 @@ public class People {
 	}
 
 
-	public People(String name, int age, String gender, String occupation) {
+	public People(int id, String name, int age, String gender, String occupation) {
 		super();
+		this.id = id;
 		this.name = name;
 		this.age = age;
 		this.gender = gender;
@@ -27,6 +29,17 @@ public class People {
 	}
 	
 	
+	
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
 	public String getName() {
 		return name;
 	}
