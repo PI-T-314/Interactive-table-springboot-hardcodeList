@@ -26,6 +26,24 @@ table, td, th{
 	border-collapse:collapse;
 	padding: 5px;
 }
+.info{
+	text-align: center;
+}
+.delete-button {
+  	background-color: rgb(255, 99, 71);
+  	border: none;
+  	color: white;
+  	padding: 8px 16px;
+  	text-align: center;
+  	text-decoration: none;
+  	display: inline-block;
+  	font-size: 14px;
+  	cursor: pointer;
+}
+
+.delete-button:hover {
+  	background-color: rgb(196, 99, 71);
+}
 </style>
 
 </head>
@@ -40,14 +58,16 @@ table, td, th{
 			<th>Age</th>
 			<th>Gender</th>
 			<th>Occupation</th>
+			<th>Delete</th>
 		</tr>
 	</thead>
-	<tbody>
+	<tbody class ="info" >
 		<tr th:each="p : ${people}">
 			<td th:text="${p.name}"/>
 			<td th:text="${p.age}"/>
 			<td th:text="${p.gender}"/>
 			<td th:text="${p.occupation}"/>
+			<td><a class="delete-button" th:href="@{/delete-registered(peopleid=${p.id})}">Delete</a></td>
 		</tr>
 	</tbody>
 </table>
@@ -56,8 +76,8 @@ table, td, th{
 <form th:action="@{/}">
 	<input type="submit" value="Go back">
 </form>
-
-<form th:action="@{/register-page}">
+<br>
+<form th:action="@{/register-page}" method="post">
 	<input type="submit" value="Register new Person">
 </form>
 
