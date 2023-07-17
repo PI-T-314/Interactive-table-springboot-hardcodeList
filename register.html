@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Register Page</title>
+
+<style type="text/css">
+h2,form{
+	text-align: center;
+}
+form{
+	margin:10px;
+}
+.m{
+	margin: 10px;
+}
+</style>
+
+</head>
+<body>
+<h2>Registration</h2>
+
+<form action="#" th:action="@{/register}" method="post" th:object="${people}">
+	
+	<label>Enter Name: </label>
+	<input class="m" type="text" th:field="*{name}"><br>
+	
+	<label>Enter Age: </label>
+	<input class="m" type="number" th:field="*{age}"><br>
+	
+	<label>Choose Gender: </label>
+	<select class="m" th:field="*{gender}">
+		<option th:value="Male">Male</option>
+		<option th:value="Female" >Female</option>
+	</select><br>
+	
+	<label>Enter Occupation: </label>
+	<input class="m" type="text" th:field="*{occupation}"><br>
+	
+	<input class="m" type="submit" value="Register"><br>
+
+</form>
+<form th:action="@{/}">
+	<input type="submit" value="Go back">
+</form>
+
+</body>
+</html>

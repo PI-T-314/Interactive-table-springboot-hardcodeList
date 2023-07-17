@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Start Page</title>
+
+<style type="text/css">
+
+h1,form{
+	text-align: center;
+}
+form{
+	margin:10px;
+}
+
+</style>
+
+</head>
+<body>
+
+<h1>This is the Startup page</h1>
+
+<form th:action="@{/hello}">
+	<input type="submit" value="go to hello (Json)">
+</form>
+
+<form th:action="@{/people}">
+	<input type="submit" value="go to people Json list">
+</form>
+
+<form th:action="@{/people-table}">
+	<input type="submit" value="Go to people's table">
+</form>
+
+<form th:action="@{/register-page}">
+	<input type="submit" value="Register new Person">
+</form>
+
+
+
+</body>
+</html>
